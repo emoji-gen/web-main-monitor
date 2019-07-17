@@ -1,1 +1,6 @@
+aiodns
+aiohttp
+cchardet
+gunicorn
 pyppeteer
+uvloop
