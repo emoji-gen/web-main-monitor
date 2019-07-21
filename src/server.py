@@ -25,10 +25,14 @@ async def redirect(request):
 
 # ---------------------------------------------------------
 
+import os
+
 async def app_factory():
     app = Application()
     app.router.add_get('/', redirect)
     app.router.add_get('/health', health)
+
+    print('GOOGLE_CHROME_SHIM', os.getenv('GOOGLE_CHROME_SHIM'))
 
     return app
 
