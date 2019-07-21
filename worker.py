@@ -20,7 +20,7 @@ INTERVAL = 60 * 5 # 5 min
 
 if __name__ == '__main__':
     inspector = Inspector()
-    notifier = Notifier()
+    notifier = Notifier(url=os.getenv('SLACK_INCOMING_WEBHOOK'))
 
     while True:
         print('Inspection started', flush=True)

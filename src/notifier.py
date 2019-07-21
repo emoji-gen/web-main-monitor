@@ -1,6 +1,18 @@
 # -*- coding: utf-8 -*-
 
+import slackweb
+
 class Notifier:
-    def notify(msg):
-        print(msg)
-        # ':rotating_light:'
+    def __init__(self, url):
+        self.slack = slackweb.Slack(url=url)
+
+    def notify(text):
+        attachment = {
+            'color': 'red',
+            'text': text,
+        }
+        slack.notify(
+            username='web-main-monitor',
+            icon_emoji=':rotating_light:',
+            attachments=[attachment]
+        )
