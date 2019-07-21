@@ -5,8 +5,9 @@ attrs==19.1.0
 cchardet==2.1.4
 cffi==1.12.3
 chardet==3.0.4
-chromedriver-binary==75.0.3770.140
+chromedriver-binary==75.0.3770.140.0
 gunicorn==19.9.0
+honcho==1.0.1
 idna==2.8
 multidict==4.5.2
 pycares==3.0.0

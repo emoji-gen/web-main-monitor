@@ -1,0 +1,3 @@
+server: gunicorn server:app_factory --config config/gunicorn.conf
+worker: python worker.py
+
