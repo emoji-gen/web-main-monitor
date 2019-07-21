@@ -2,7 +2,6 @@
 
 import sys
 import os
-from aiohttp.web import run_app
 from pathlib import Path
 
 src_path = str(Path(__file__).resolve().parent.joinpath('src'))
