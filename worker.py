@@ -10,6 +10,7 @@ sys.path.append(src_path)
 
 # ---------------------------------------------------------
 
+import sys
 from time import sleep
 
 from inspector import Inspector
