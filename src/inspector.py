@@ -31,4 +31,4 @@ class Inspector:
         driver.find_element_by_css_selector('.Header')
         driver.find_element_by_css_selector('.Generator')
         driver.find_element_by_css_selector('.RecentlyLog')
-        driver.find_element_by_css_selector('.Footer')
+        driver.find_element_by_css_selector('.Footerx')
