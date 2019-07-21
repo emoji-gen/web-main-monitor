@@ -1,6 +1,6 @@
 aiodns
 aiohttp
 cchardet
+chromedriver-binary
 gunicorn
-pyppeteer
 uvloop
