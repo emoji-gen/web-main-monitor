@@ -1,4 +1,4 @@
-# web-main-monitor
+# Monitor
 [![CircleCI](https://circleci.com/gh/emoji-gen/web-main-monitor/tree/master.svg?style=shield)](https://circleci.com/gh/emoji-gen/web-main-monitor/tree/master)
 [![Requirements Status](https://requires.io/github/emoji-gen/web-main-monitor/requirements.svg?branch=master)](https://requires.io/github/emoji-gen/web-main-monitor/requirements/?branch=master)
 
