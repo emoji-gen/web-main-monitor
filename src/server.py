@@ -27,13 +27,25 @@ async def redirect(request):
 
 import os
 
+import chromedriver_binary
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
 async def app_factory():
     app = Application()
     app.router.add_get('/', redirect)
     app.router.add_get('/health', health)
 
-    print('GOOGLE_CHROME_BIN', os.getenv('GOOGLE_CHROME_BIN'))
-    print('GOOGLE_CHROME_SHIM', os.getenv('GOOGLE_CHROME_SHIM'))
+    options = Options()
+    options.binary_location = os.getenv('GOOGLE_CHROME_SHIM')
+    options.add_argument('--headless')
+    driver = webdriver.Chrome(options=options)
+    driver.get('https://www.google.co.jp/')
+    html = driver.page_source
+    print(html)
+    driver.quit()
+    # print('GOOGLE_CHROME_BIN', os.getenv('GOOGLE_CHROME_BIN'))
+    # print('GOOGLE_CHROME_SHIM', os.getenv('GOOGLE_CHROME_SHIM'))
 
     return app
 
