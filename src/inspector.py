@@ -27,8 +27,9 @@ class Inspector:
 
     def _inspect_home_by_path(cls, driver, *, path='/'):
         driver.get(cls.site_url + path)
-        driver.find_element_by_css_selector('.AppDebug')
+        driver.find_element_by_css_selector('.App')
         driver.find_element_by_css_selector('.Header')
+        driver.find_element_by_css_selector('.Home')
         driver.find_element_by_css_selector('.Result')
         driver.find_element_by_css_selector('.Generator')
         driver.find_element_by_css_selector('.RecentlyLog')
