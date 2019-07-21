@@ -3,4 +3,5 @@ aiohttp
 cchardet
 chromedriver-binary
 gunicorn
+selenium
 uvloop
