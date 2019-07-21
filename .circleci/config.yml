@@ -30,9 +30,8 @@ jobs:
           name: Notify deploy started
           command: |
             if [ "$CIRCLE_BRANCH" = 'master' ]; then
-              :
-              # retry -- pip3 install -q slackweb
-              # python3 scripts/notify.py started
+              retry -- pip3 install -q slackweb
+              python3 scripts/notify.py started
             fi
       - deploy:
           name: Deploy Master to Heroku
@@ -46,17 +45,15 @@ jobs:
           name: Notify deploy successful
           command: |
             if [ "$CIRCLE_BRANCH" = 'master' ]; then
-              :
-              # retry -- pip3 install -q slackweb
-              # python3 scripts/notify.py successful
+              retry -- pip3 install -q slackweb
+              python3 scripts/notify.py successful
             fi
       - run:
           name: Notify deploy failed
           command: |
             if [ "$CIRCLE_BRANCH" = 'master' ]; then
-              :
-              # retry -- pip3 install -q slackweb
-              # python3 scripts/notify.py failed
+              retry -- pip3 install -q slackweb
+              python3 scripts/notify.py failed
             fi
           when: on_fail
 
