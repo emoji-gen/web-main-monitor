@@ -27,7 +27,7 @@ if __name__ == '__main__':
         try:
             inspector.inspect()
             print('Inspection successful', flush=True)
-        except RuntimeError as err:
+        except Exception as err:
             print(err, file=sys.stderr, flush=True)
             notifier.notify(err)
 
