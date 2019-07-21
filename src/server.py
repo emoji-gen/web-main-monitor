@@ -25,17 +25,10 @@ async def redirect(request):
 
 # ---------------------------------------------------------
 
-import pyppeteer
-
 async def app_factory():
     app = Application()
     app.router.add_get('/', redirect)
     app.router.add_get('/health', health)
-
-    browser = await pyppeteer.launch()
-    #page = await browser.newPage()
-    #await page.goto('https://emoji-gen.ninja')
-    #await browser.close()
 
     return app
 
