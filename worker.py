@@ -22,6 +22,7 @@ if __name__ == '__main__':
     notifier = Notifier()
 
     while True:
+        print('Inspection started')
         try:
             inspector.inspect()
             print('Inspection successful')
