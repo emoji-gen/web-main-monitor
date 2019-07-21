@@ -1,2 +1,2 @@
-web: honcho run -f Procfile.honcho
+web: honcho start -f Procfile.honcho
 
