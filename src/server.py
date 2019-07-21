@@ -33,9 +33,9 @@ async def app_factory():
     app.router.add_get('/health', health)
 
     browser = await pyppeteer.launch()
-    page = await browser.newPage()
-    await page.goto('https://emoji-gen.ninja')
-    await browser.close()
+    #page = await browser.newPage()
+    #await page.goto('https://emoji-gen.ninja')
+    #await browser.close()
 
     return app
 
