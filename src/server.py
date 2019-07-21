@@ -32,6 +32,7 @@ async def app_factory():
     app.router.add_get('/', redirect)
     app.router.add_get('/health', health)
 
+    print('GOOGLE_CHROME_BIN', os.getenv('GOOGLE_CHROME_BIN'))
     print('GOOGLE_CHROME_SHIM', os.getenv('GOOGLE_CHROME_SHIM'))
 
     return app
