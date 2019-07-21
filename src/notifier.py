@@ -7,12 +7,14 @@ class Notifier:
         self.slack = slackweb.Slack(url=url)
 
     def notify(self, text):
-        attachment = {
-            'color': 'red',
-            'text': str(text),
-        }
         self.slack.notify(
             username='web-main-monitor',
             icon_emoji=':rotating_light:',
-            attachments=[attachment]
+            attachments=[
+                {
+                    'color': 'danger',
+                    'pretext': '<!channel>',
+                    'text': str(text),
+                },
+            ]
         )
