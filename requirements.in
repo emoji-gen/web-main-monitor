@@ -1,7 +1,7 @@
 aiodns
 aiohttp
 cchardet
-chromedriver-binary
+chromedriver-binary==75.0.3770.140
 gunicorn
 selenium
 uvloop

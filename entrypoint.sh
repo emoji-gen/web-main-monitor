@@ -2,4 +2,6 @@
 
 set -eu -o pipefail
 
-exec gunicorn app:app_factory --config config/gunicorn.conf
+exec parallel ::: \
+  "gunicorn server:app_factory --config config/gunicorn.conf" \
+  "python worker.py"

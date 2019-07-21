@@ -13,7 +13,7 @@ sys.path.append(src_path)
 import asyncio
 import uvloop
 
-from server import app_factory
+from app import app_factory
 
 asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
 
