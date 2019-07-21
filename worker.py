@@ -17,6 +17,8 @@ from notifier import Notifier
 
 INTERVAL = 60 * 5 # 5 min
 
+print(__name__)
+
 if __name__ == '__main__':
     inspector = Inspector()
     notifier = Notifier()
