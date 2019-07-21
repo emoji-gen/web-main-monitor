@@ -18,19 +18,17 @@ from notifier import Notifier
 
 INTERVAL = 60 * 5 # 5 min
 
-print(__name__)
-
 if __name__ == '__main__':
     inspector = Inspector()
     notifier = Notifier()
 
     while True:
-        print('Inspection started')
+        print('Inspection started', flush=True)
         try:
             inspector.inspect()
-            print('Inspection successful')
+            print('Inspection successful', flush=True)
         except RuntimeError as err:
-            print(err, file=sys.stderr)
+            print(err, file=sys.stderr, flush=True)
             notifier.notify(err)
 
         sleep(INTERVAL)
