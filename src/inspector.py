@@ -10,7 +10,7 @@ from selenium.webdriver.chrome.options import Options
 
 class Inspector:
     site_url = 'https://emoji-gen.ninja'
-    locale_prefixes = ('/', '/en', '/ko', '/zh-Hans', '/zh-Hant')
+    locale_prefixes = ('', '/en', '/ko', '/zh-Hans', '/zh-Hant')
 
     def inspect(cls):
         options = Options()
@@ -20,13 +20,13 @@ class Inspector:
         driver = webdriver.Chrome(options=options)
         try:
             for locale_prefix in cls.locale_prefixes:
-                cls._inspect_home_by_path(driver, path=locale_prefix)
+                cls._inspect_home_by_path(driver, path=locale_prefix + '/')
         finally:
             driver.quit()
 
 
     def _inspect_home_by_path(cls, driver, *, path='/'):
-        driver.get(cls.site_url + path)
+        driver.get(cls.site_url + path + '?ga=0')
         driver.find_element_by_css_selector('.App')
         driver.find_element_by_css_selector('.Header')
         driver.find_element_by_css_selector('.Home')
