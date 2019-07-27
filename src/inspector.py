@@ -3,6 +3,7 @@
 import os
 
 import chromedriver_binary
+from retry import retry
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -12,10 +13,13 @@ class Inspector:
     site_url = 'https://emoji-gen.ninja'
     locale_prefixes = ('', '/en', '/ko', '/zh-Hans', '/zh-Hant')
 
+    @retry(tries=5, delay=5, backoff=2)
     def inspect(cls):
         options = Options()
-        options.binary_location = os.getenv('GOOGLE_CHROME_SHIM')
         options.add_argument('--headless')
+
+        if 'GOOGLE_CHROME_SHIM' in os.environ:
+            options.binary_location = os.environ['GOOGLE_CHROME_SHIM']
 
         driver = webdriver.Chrome(options=options)
         try:

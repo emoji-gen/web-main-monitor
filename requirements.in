@@ -4,6 +4,7 @@ cchardet
 chromedriver-binary==75.0.3770.140
 gunicorn
 honcho
+retry
 selenium
 slackweb
 uvloop
