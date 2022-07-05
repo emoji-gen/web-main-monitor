@@ -5,14 +5,14 @@ attrs==19.1.0
 cchardet==2.1.4
 cffi==1.12.3
 chardet==3.0.4
-chromedriver-binary==75.0.3770.140.0
+chromedriver-binary==75.0.3770.140
 decorator==4.4.0
 gunicorn==19.9.0
 honcho==1.0.1
 idna==2.8
 multidict==4.5.2
 py==1.8.0
-pycares==3.0.0
+pycares==4.2.0
 pycparser==2.19
 retry==0.9.2
 selenium==3.141.0
